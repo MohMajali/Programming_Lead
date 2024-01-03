@@ -4,7 +4,7 @@ session_start();
 include "../Connect.php";
 
 $R_ID = $_SESSION['R_Log'];
-$lang_id = $_GET['lang_id'];
+$lang_id = $_GET['language_id'];
 
 if ($R_ID) {
     $sql1 = mysqli_query($con, "select * from users where id='$R_ID'");
@@ -153,11 +153,11 @@ $started_date = $row2['started_date'];
               <input id="langInput" type="hidden" name="language_id" value="<?php echo $lang_id ?>">
 
               <div class="rating">
-                <span><input type="radio" name="rating" id="str1" value="1" onclick="submitForm()"><label class="fa fa-star" for="str1"></label></span>
-                <span><input type="radio" name="rating" id="str2" value="2" onclick="submitForm()"><label class="fa fa-star" for="str2"></label></span>
-                <span><input type="radio" name="rating" id="str3" value="3" onclick="submitForm()"><label class="fa fa-star" for="str3"></label></span>
-                <span><input type="radio" name="rating" id="str4" value="4" onclick="submitForm()"><label class="fa fa-star" for="str4"></label></span>
                 <span><input type="radio" name="rating" id="str5" value="5" onclick="submitForm()"><label class="fa fa-star" for="str5"></label></span>
+                <span><input type="radio" name="rating" id="str4" value="4" onclick="submitForm()"><label class="fa fa-star" for="str4"></label></span>
+                <span><input type="radio" name="rating" id="str3" value="3" onclick="submitForm()"><label class="fa fa-star" for="str3"></label></span>
+                <span><input type="radio" name="rating" id="str2" value="2" onclick="submitForm()"><label class="fa fa-star" for="str2"></label></span>
+                <span><input type="radio" name="rating" id="str1" value="1" onclick="submitForm()"><label class="fa fa-star" for="str1"></label></span>
               </div>
             </form>
           </div>

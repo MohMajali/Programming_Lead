@@ -13,12 +13,22 @@ if (isset($_POST['Submit'])) {
 
         $row = mysqli_fetch_array($query);
 
-        $R_ID = $row['id'];
-        $_SESSION['R_Log'] = $R_ID;
+        if ($row['user_type_id'] == 1) {
 
-        echo '<script language="JavaScript">
+            $A_ID = $row['id'];
+            $_SESSION['A_Log'] = $A_ID;
+
+            echo '<script language="JavaScript">
+        document.location="./Admin_Dashboard/";
+        </script>';
+        } else {
+            $R_ID = $row['id'];
+            $_SESSION['R_Log'] = $R_ID;
+
+            echo '<script language="JavaScript">
         document.location="Site/";
         </script>';
+        }
 
     } else {
 
